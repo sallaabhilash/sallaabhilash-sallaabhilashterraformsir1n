@@ -1,9 +1,7 @@
 variable "rg_name" {
   
 }
-variable "storage_name" {
-  
-}
+
 variable "location" {
   
 }
