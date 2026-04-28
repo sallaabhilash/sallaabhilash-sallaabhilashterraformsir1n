@@ -3,13 +3,14 @@ module "rg" {
   name = var.rg_name
   location = var.location
 }
-module "storage" {
+/*module "storage" {
   source = "../../modules/storage"
 
   name     = var.storage_name
   rg_name  = module.rg.rg_name
   location = module.rg.location
-}
+}*/
+
 module "vnet" {
 source = "../../modules/vnet"
 name="vnet-dev"
