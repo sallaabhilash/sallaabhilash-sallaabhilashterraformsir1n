@@ -39,7 +39,7 @@ stages:
         command: 'plan'
         workingDirectory: '$(workingDirectory)'
         environmentServiceNameAzureRM: '$(azureServiceConnection)'
-        commandOptions: '-var-file="terraform.tfvars"'
+        commandOptions: '-var-file="$(System.DefaultWorkingDirectory)/$(workingDirectory)/terraform.tfvars"'
 
 - stage: TerraformApply
   displayName: 'Terraform Apply'
@@ -71,4 +71,4 @@ stages:
         command: 'apply'
         workingDirectory: '$(workingDirectory)'
         environmentServiceNameAzureRM: '$(azureServiceConnection)'
-        commandOptions: '-var-file="terraform.tfvars" -auto-approve'
+        commandOptions: '-var-file="$(System.DefaultWorkingDirectory)/$(workingDirectory)/terraform.tfvars" -auto-approve'
